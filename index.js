@@ -73,7 +73,7 @@ async function getCategoryMemberContents(api, category) {
 // A primitive version of [[Module:Plain text]] because I'm too lazy to copy its code.
 // One main difference from that module: This one converts <br> into \n, not ", "
 function plainText(wikitext) {
-    wikitext = wikitext.replaceAll(/<ref\s.+\/>/g, "");
+    wikitext = wikitext.replaceAll(/<ref\s[^>]+\/>/g, "");
     wikitext = wikitext.replaceAll(/<ref(?:\s[^>]+)?>.+?<\/ref>/g, "");
     wikitext = wikitext.replaceAll(/<br ?\/?>/g, "\n");
     return wikitext;
