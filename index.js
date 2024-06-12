@@ -208,6 +208,10 @@ async function main() {
     let parse = await generateTable(api, contents);
 
     // Welcome to ✨ War Crimes with Claire ✨
+    // Fix license link before we undergo metamorphosis
+    let licenseLink = document.querySelector("#licenseLink");
+    licenseLink.href = licenseLink.href;
+    // Undergo metamorphosis
     document.documentElement.innerHTML = parse.headhtml.replace("<head>", `<head><base href="${WIKI_BASE}">`).replace(/<link rel="icon" .+?>/, "");
     // Remove MediaWiki title
     document.head.querySelector("title").remove();
