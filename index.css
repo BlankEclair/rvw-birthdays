@@ -1,0 +1,38 @@
+html {
+    font-family: sans-serif;
+    overflow-wrap: anywhere;
+}
+body {
+    height: revert;
+    margin: revert;
+    background-color: revert;
+}
+pre {
+    white-space: pre-wrap;
+}
+.revert-style * {
+    all: revert;
+}
+
+.hide {
+    display: none !important;
+}
+
+h2 {
+    margin-top: 0 !important;
+    margin-bottom: 0.25em !important;
+}
+p {
+    margin: 0 !important;
+}
+hr {
+    margin: 1em 0 !important;
+}
+
+#errorBox {
+    background-color: pink !important;
+    color: black !important;
+    border: 2px red dotted !important;
+    padding: 0.5em !important;
+    margin-bottom: 1em !important;
+}

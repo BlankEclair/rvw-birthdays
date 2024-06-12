@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Birthdays - Rainverse Wiki</title>
+<!-- Preload CSS to prevent flash of unstyled content -->
+<link rel="stylesheet" href="https://rainverse.wiki/w/load.php?lang=en&modules=skins.vector.styles.legacy&only=styles&skin=vector">
+<link rel="stylesheet" href="index.css">
+<script defer src="api.js"></script>
+<script defer src="index.js"></script>
+</head>
+
+<body>
+<div class="revert-style">
+    <h2>Rainverse Wiki Birthdays</h2>
+    <p>This is a tool for the <a href="https://rainverse.wiki">Rainverse Wiki</a> that creates a table which lists all of the characters in the <a href="https://rainverse.wiki/wiki/Rainverse">Rainverse</a>, sorted by date of birth.</p>
+    <p>Created by <a href="https://meta.miraheze.org/wiki/User:BlankEclair">BlankEclair</a> and open sourced under the <a href="LICENSE.txt">MIT license</a> on <a href="https://git.average.name/BlankEclair/rvw-birthdays">Average Codestuff</a> and <a href="https://github.com/BlankEclair/rvw-birthdays">Github</a>.</p>
+
+    <hr>
+
+    <noscript><p>This tool requires Javascript since all processing is done client-side.</p></noscript>
+    <div id="errorBox" class="hide">An error occured: <pre id="errorPre"></pre></div>
+
+    <div id="statusWrapper">
+        <label for="status">Loading...</label>
+        <progress id="status"></progress>
+    </div>
+</div>
+</body>
+</html>
