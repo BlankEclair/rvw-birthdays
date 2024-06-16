@@ -134,7 +134,7 @@ function parseDate(date) {
 function extractDataFromWikitext(wikitext) {
     let fullName = /\|\s*full name\s*=([\s\S]*?)\n\s*(?:\||}})/.exec(wikitext);
     if (fullName) {
-        fullName = plainText(fullName[1]).replace(/^[\s\S]*\n/, "").replace(/\(.+/, "").trim();
+        fullName = plainText(fullName[1]).replace(/^[\s\S]*\n/, "").replace(/ \(.+/, "").trim();
     }
 
     let dateString = /\|\s*birthDate\s*=([\s\S]*?)\n\s*(?:\||}})/.exec(wikitext);
