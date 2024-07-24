@@ -171,7 +171,7 @@ async function generateTable(api, contents) {
     }
     wikitext += "|}";
 
-    let data = await api.get({
+    let data = await api.post({
         action: "parse",
         text: wikitext,
         prop: ["text", "headhtml"],

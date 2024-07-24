@@ -16,7 +16,7 @@ class API {
         this.endpoint = endpoint;
     }
 
-    async get(options) {
+    processOptions(options) {
         options = {
             ...options,
             format: "json",
@@ -31,8 +31,27 @@ class API {
             }
         }
 
+        return options;
+    }
+
+    async get(options) {
+        options = this.processOptions(options);
+
         let search = new URLSearchParams(options);
         let resp = await fetch(`${this.endpoint}?${search.toString()}`);
+        let data = await resp.json();
+        if (data.error) {
+            throw new MediawikiError(data.error.code, data.error.info);
+        }
+
+        return data;
+    }
+
+    async post(options) {
+        options = this.processOptions(options);
+
+        let search = new URLSearchParams(options);
+        let resp = await fetch(new Request(this.endpoint, {body: options}));
         let data = await resp.json();
         if (data.error) {
             throw new MediawikiError(data.error.code, data.error.info);
