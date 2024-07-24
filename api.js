@@ -51,7 +51,7 @@ class API {
         options = this.processOptions(options);
 
         let search = new URLSearchParams(options);
-        let resp = await fetch(new Request(this.endpoint, {body: options}));
+        let resp = await fetch(new Request(this.endpoint, {method: "POST", body: search}));
         let data = await resp.json();
         if (data.error) {
             throw new MediawikiError(data.error.code, data.error.info);
